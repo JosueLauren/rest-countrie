@@ -1,9 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { ContentHome } from "./components/ContentHome";
+
 export const RoutesApp = () => {
   return (
     <BrowserRouter>
-      <Routes></Routes>
+      <Routes>
+        <Route path="/" element={<ContentHome />} />
+      </Routes>
     </BrowserRouter>
   );
 };
