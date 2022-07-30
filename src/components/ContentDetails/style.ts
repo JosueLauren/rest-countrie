@@ -93,6 +93,7 @@ export const Container = styled.main`
 
             img {
             width: 100%;
+            
          }
 
             > div {
