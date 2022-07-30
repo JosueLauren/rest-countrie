@@ -16,7 +16,7 @@ export const Container = styled.main`
         background-color: ${(props) => props.theme.elements};
         border-radius: 5px;
         cursor: pointer;
-        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+        box-shadow: 0 0 3px 2px #8f44fd;
     }
 
     > div {
@@ -77,7 +77,7 @@ export const Container = styled.main`
                 padding: 5px 40px;
                 background-color: ${(props) => props.theme.elements};
                 border-radius: 5px;
-                box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+                box-shadow: 0 0 3px 2px #8f44fd;
               }
             }   
         }

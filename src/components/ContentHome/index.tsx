@@ -3,6 +3,8 @@ import { Container, ContainerFilters } from "./style";
 
 import { Link } from "react-router-dom";
 
+import { Spinner } from "./../spinner";
+
 interface IinfoCountries {
   flags: {
     png: string;
@@ -20,15 +22,19 @@ export const ContentHome = () => {
   const [selectFilter, setSelelctFilter] = useState("");
   const [inputFilter, setInputFilter] = useState("");
   const [countries, setCountries] = useState<IinfoCountries[] | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function fetchCoutries() {
       try {
+        setIsLoading(true);
         const response = await fetch("https://restcountries.com/v3.1/all");
         const data = await response.json();
         setCountries(data);
       } catch (error) {
         console.log(error);
+      } finally {
+        setIsLoading(false);
       }
     }
 
@@ -78,6 +84,7 @@ export const ContentHome = () => {
         </select>
       </ContainerFilters>
       <div className="container-coutries">
+        {isLoading && <Spinner />}
         {filterCoutries()?.map((country) => {
           return (
             <Link

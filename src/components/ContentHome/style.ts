@@ -27,7 +27,7 @@ export const Container = styled.main`
             
             &:hover {
                 /* transform: scale(1.1); */
-                box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+                box-shadow: 0 0 3px 2px #8f44fd;
             }
             
             img {
@@ -91,7 +91,7 @@ export const ContainerFilters = styled.div`
         border-radius: 5px;
         color: ${(props) => props.theme.text};
         font-size: 1.1rem;
-        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+        box-shadow: 0 0 3px 2px #8f44fd;
 
         &::placeholder {
             color: ${(props) => props.theme.text};
@@ -109,7 +109,7 @@ export const ContainerFilters = styled.div`
         font-size: 1.1rem;
         border: none;
         border-radius: 5px;
-        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+        box-shadow: 0 0 3px 2px #8f44fd;
      }
 
      @media screen and (max-width: 739px){
