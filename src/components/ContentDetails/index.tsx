@@ -53,7 +53,7 @@ export const ContentDetails = () => {
     }
 
     fecthCountry();
-  }, []);
+  }, [nameCountry]);
 
   async function getCountriesBorders(arr: string[] = []) {
     let ulrBase = "https://restcountries.com/v3.1/alpha?codes=";
@@ -73,7 +73,7 @@ export const ContentDetails = () => {
 
       setNameBorders(namesBorders);
     } else {
-      setNameBorders(["Not Borders"]);
+      setNameBorders([]);
     }
   }
 
@@ -146,9 +146,14 @@ export const ContentDetails = () => {
               </div>
               <p>
                 Border Countries:
-                {namesBorders?.map((namBborder, index) => {
-                  return <span key={index}>{namBborder}</span>;
-                })}
+                {namesBorders &&
+                  namesBorders?.map((namBborder, index) => {
+                    return (
+                      <Link to={`/details/${namBborder}`} key={index}>
+                        {namBborder}
+                      </Link>
+                    );
+                  })}
               </p>
             </div>
           </div>

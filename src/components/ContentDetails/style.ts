@@ -7,7 +7,7 @@ export const Container = styled.main`
     color: ${(props) => props.theme.text};
     padding: 2rem 5rem;
 
-    a {
+    > a {
         margin-bottom: 3rem;
         display: inline-block;
         text-decoration: none;
@@ -72,12 +72,14 @@ export const Container = styled.main`
             flex-wrap: wrap;
             gap: 10px;
 
-            > span {
+            > a {
                 font-size: 1rem;
                 padding: 5px 40px;
                 background-color: ${(props) => props.theme.elements};
+                color: ${(props) => props.theme.text};
                 border-radius: 5px;
                 box-shadow: 0 0 3px 2px #8f44fd;
+                text-decoration: none;
               }
             }   
         }
