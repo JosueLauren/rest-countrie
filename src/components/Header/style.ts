@@ -30,4 +30,11 @@ export const Container = styled.header`
         }
     }
 
+    @media screen and (max-width: 739px){
+        padding: 0 1rem;
+        p, button {
+            font-size: 0.8rem;
+        }
+    }
+
 `

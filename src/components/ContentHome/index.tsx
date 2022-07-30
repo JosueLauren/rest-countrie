@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Container, ContainerFilters } from "./style";
 
+import { Link } from "react-router-dom";
+
 interface IinfoCountries {
   flags: {
     png: string;
@@ -78,23 +80,28 @@ export const ContentHome = () => {
       <div className="container-coutries">
         {filterCoutries()?.map((country) => {
           return (
-            <div key={country.name.common}>
+            <Link
+              key={country.name.common}
+              to={`/details/${country.name.common}`}
+            >
               <div>
-                <img src={country.flags.svg} alt="bandeira de um país" />
+                <div>
+                  <img src={country.flags.svg} alt="bandeira de um país" />
+                </div>
+                <h3>{country.name.common}</h3>
+                <div>
+                  <p>
+                    Population: <span>{country.population}</span>
+                  </p>
+                  <p>
+                    Region: <span>{country.region}</span>
+                  </p>
+                  <p>
+                    Capital: <span>{country.capital}</span>
+                  </p>
+                </div>
               </div>
-              <h3>{country.name.common}</h3>
-              <div>
-                <p>
-                  Population: <span>{country.population}</span>
-                </p>
-                <p>
-                  Region: <span>{country.region}</span>
-                </p>
-                <p>
-                  Capital: <span>{country.capital}</span>
-                </p>
-              </div>
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -14,7 +14,7 @@ export const Container = styled.main`
         grid-gap: 20px;
         padding: 0 5rem;
 
-        > div {
+        > a {
 
             background-color: ${(props) => props.theme.elements};
             max-width: 280px;
@@ -22,10 +22,12 @@ export const Container = styled.main`
             padding-bottom: 30px;
             cursor: pointer;
             border-radius: 5px;
-            transition: transform 0.3s linear;
-
+            transition: box-shadow 0.3s linear;
+            text-decoration: none;
+            
             &:hover {
-                transform: scale(1.1);
+                /* transform: scale(1.1); */
+                box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
             }
             
             img {
@@ -57,12 +59,26 @@ export const Container = styled.main`
         }
 
     }
+
+    @media screen and (max-width: 739px) {
+     .container-coutries {
+         grid-template-columns: 1fr;
+         padding: 0 1rem;
+
+         > a {
+            max-width: none;
+            margin: auto;
+         }
+        }     
+    }
 `
 
 export const ContainerFilters = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 5rem;
+    flex-wrap: wrap;
+    gap: 50px;
 
     input {
         background-image: url(${iconSearch});
@@ -75,12 +91,15 @@ export const ContainerFilters = styled.div`
         border-radius: 5px;
         color: ${(props) => props.theme.text};
         font-size: 1.1rem;
+        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
 
         &::placeholder {
             color: ${(props) => props.theme.text};
             font-size: 1.1rem;
         }
-     }
+
+       
+    }
 
      select {
         background-color: ${(props) => props.theme.elements};
@@ -90,5 +109,23 @@ export const ContainerFilters = styled.div`
         font-size: 1.1rem;
         border: none;
         border-radius: 5px;
+        box-shadow: 0 0 3px 2px rgba(0,0,0,0.2);
+     }
+
+     @media screen and (max-width: 739px){
+        padding: 5rem 1rem;
+
+        > input {
+            width: 100%;
+            font-size: 0.8rem;
+
+            &::placeholder {
+                font-size: 0.8rem;
+            }
+        }
+
+        > select {
+            font-size: 0.8rem;
+        }
      }
 `
